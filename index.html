@@ -109,15 +109,16 @@
         </section>
 
         <!-- Open the modal using ID.showModal() method -->
-        <button class="btn" onclick="my_modal_5.showModal()">open modal</button>
-        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-            <div class="modal-box">
-                <h3 class="text-lg font-bold">Hello!</h3>
-                <p class="py-4">Press ESC key or click the button below to close</p>
+        <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+        <dialog id="word_modal" class="modal modal-bottom p-8 sm:modal-middle">
+            <div class="modal-box max-w-[350px] rounded-3xl md:max-w-[650px]  p-6 ">
+                <div id="details-container" class="space-y-8 p-6 border-2 border-solid border-[#EDF7FF] rounded-lg">
+                    
+                </div>
                 <div class="modal-action">
                     <form method="dialog">
                         <!-- if there is a button in form, it will close the modal -->
-                        <button class="btn">Close</button>
+                        <button class="btn btn-primary">Complete Learning</button>
                     </form>
                 </div>
             </div>
@@ -129,6 +130,3 @@
 
 
 </html>
-
-<!-- <a href="#" class="btn bg-transparent border-[#422AD5] text-[#422AD5] hover:bg-[#422AD5] hover:text-white"><i
-                        class="fa-solid fa-book-open"></i> Lesson -1</a> -->
