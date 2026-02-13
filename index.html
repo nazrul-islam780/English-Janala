@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title and fav icon area -->
+    <title>English Janala</title>
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+
+    <!-- Font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- tailwind + daisy UI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- font integration -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body class="">
+    <header class="px-5 md:px-24 bg-[#BADEFF42] py-6 border-[#C6BDBD] border-y-[1px]">
+        <div class="navbar">
+            <div class="navbar-start ">
+                <div class="dropdown mr-20 md:mr-0">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="-1"
+                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        <div class=" flex flex-col gap-4">
+                            <a
+                                class="btn bg-transparent border-[#422AD5] text-[#422AD5] hover:bg-[#422AD5] hover:text-white"><i
+                                    class="fa-solid fa-circle-question"></i> FAQ</a>
+                            <a
+                                class="btn bg-transparent border-[#422AD5] text-[#422AD5] hover:bg-[#422AD5] hover:text-white"><i
+                                    class="fa-solid fa-book-open"></i> Learn</a>
+                            <a
+                                class="btn bg-transparent border-[#422AD5] text-[#422AD5] hover:bg-[#422AD5] hover:text-white"><i
+                                    class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+                        </div>
+                    </ul>
+                </div>
+                <a href="" class="flex gap-2 items-center justify-center">
+                    <span class="text-lg font-bold">English</span>
+                    <img src="assets/logo.png" alt="English Janala Logo">
+                    <span class="font-bangla">জানালা</span>
+                </a>
+            </div>
+            <div class="navbar-end hidden md:flex gap-4  ">
+                <a class="btn bg-transparent border-[#422AD5] text-[#422AD5] hover:bg-[#422AD5] hover:text-white"><i
+                        class="fa-solid fa-circle-question"></i> FAQ</a>
+                <a class="btn bg-transparent border-[#422AD5] text-[#422AD5] hover:bg-[#422AD5] hover:text-white"><i
+                        class="fa-solid fa-book-open"></i> Learn</a>
+                <a class="btn bg-transparent border-[#422AD5] text-[#422AD5] hover:bg-[#422AD5] hover:text-white"><i
+                        class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+            </div>
+        </div>
+    </header>
+    <main class="px-8  md:px-24">
+        <!-- Hero section -->
+        <section class="flex flex-col-reverse gap-4 md:flex-row justify-between items-center">
+            <div class="content w-auto  md:w-[730px] ">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6"><span class="text-[#00BCFF]">English</span> is Easy!!</h2>
+                <p class="text-2xl font-medium font-bangla"> আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন
+                    হন অথবা আপনার
+                    দক্ষতা
+                    বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
+                <div class="form mt-6">
+                    <fieldset class="fieldset flex flex-col gap-5">
+                        <input type="text" class="input" placeholder="Enter Your Name" />
+                        <input type="password" class="input" placeholder=".................." />
+                        <button class="btn btn-primary text-xs w-28">Get Started</button>
+                    </fieldset>
+
+                </div>
+            </div>
+            <div class="image"><img class="w-[735px]" src="assets/hero-student.png" alt=""></div>
+        </section>
+        <!-- Learn vocabularies -->
+         <section class="my-18">
+            <h2 class="text-3xl font-bold text-center mb-8"><span class="text-prim">Let's</span> Learn Vocabularies</h2>
+            <div id="level-container" class="lessons flex gap-4 justify-center">
+                
+            </div>
+         </section>
+
+         <section id="word-container" class="bg-gray-100 grid grid-cols-3 gap-7 w-11/12 my-10 mx-auto rounded-xl p-7">
+             
+            <div class="text-center col-span-full my-6">
+                <p class="text-[#79716B] font-bangla text-m">আপনি এখনো কোন Lesson Select করেন নি</p>
+                <h2 class="text-[#292524] font-bangla text-3xl mt-3">একটি Lesson Select করুন।</h2>
+            </div>
+            
+        </section>
+    </main>
+    <script src="scripts/scripts.js"></script>
+</body>
+
+
+</html>
+
+<!-- <a href="#" class="btn bg-transparent border-[#422AD5] text-[#422AD5] hover:bg-[#422AD5] hover:text-white"><i
+                        class="fa-solid fa-book-open"></i> Lesson -1</a> -->
