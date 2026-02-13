@@ -9,3 +9,8 @@
 .text-prim{
     color: #00BCFF;
 }
+
+.active{
+    color: white;
+    background: #422AD5;
+}

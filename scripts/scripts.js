@@ -5,6 +5,13 @@ const loadLessons = () => {
 
 
 }
+
+const removeActive = () =>{
+    const lessonButtons = document.querySelectorAll('.lesson-btn')
+    lessonButtons.forEach(btn => btn.classList.remove('active'))
+    
+}
+
 // loadLessons()
 const loadLevelWord = (id) => {
     // console.log(id);
@@ -12,9 +19,14 @@ const loadLevelWord = (id) => {
     // console.log(url);
     fetch(url)
         .then(res => res.json())
-        .then(data => displayLoadWord(data.data));
+        .then(data => {
+            const clickBtn = document.getElementById(`lesson-btn-${id}`)
+            removeActive()
+            clickBtn.classList.add('active');
+            displayLoadWord(data.data)
+        });
 
-
+    
     // return url;
 }
 
@@ -37,7 +49,7 @@ const displayLoadWord = (words) => {
 
     // console.log(words);
     for (let word of words) {
-        console.log(word)
+        // console.log(word)
         const cardDiv = document.createElement('div')
         cardDiv.innerHTML = `<div class="shadow-sm bg-white w-auto text-center py-10 px-7 rounded-xl">
                  <h2 class="text-3xl font-bold">${word.word ? word.word : "শব্দ পাওয়া যায়নি "}</h2>
@@ -67,7 +79,7 @@ const displayLessons = (lessons) => {
         // console.log('Hello world')
         // const {level_no} = lesson
         const lessonBtn = document.createElement("div");
-        lessonBtn.innerHTML = `<a onclick="loadLevelWord(${lesson.level_no})" class="btn bg-transparent border-[#422AD5] text-[#422AD5] hover:bg-[#422AD5] hover:text-white"><i class="fa-solid fa-book-open"></i> Lesson -${lesson.level_no}</a>`;
+        lessonBtn.innerHTML = `<a id="lesson-btn-${lesson.level_no}" onclick="loadLevelWord(${lesson.level_no})" class="lesson-btn btn bg-transparent border-[#422AD5] text-[#422AD5] hover:bg-[#422AD5] hover:text-white"><i class="fa-solid fa-book-open"></i> Lesson -${lesson.level_no}</a>`;
         lessonsContainer.append(lessonBtn)
     }
 

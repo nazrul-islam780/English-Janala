@@ -74,7 +74,8 @@
         <!-- Hero section -->
         <section class="flex flex-col-reverse gap-4 md:flex-row justify-between items-center">
             <div class="content w-auto  md:w-[730px] ">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6"><span class="text-[#00BCFF]">English</span> is Easy!!</h2>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6"><span class="text-[#00BCFF]">English</span> is Easy!!
+                </h2>
                 <p class="text-2xl font-medium font-bangla"> আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন
                     হন অথবা আপনার
                     দক্ষতা
@@ -91,21 +92,37 @@
             <div class="image"><img class="w-[735px]" src="assets/hero-student.png" alt=""></div>
         </section>
         <!-- Learn vocabularies -->
-         <section class="my-18">
+        <section class="my-18">
             <h2 class="text-3xl font-bold text-center mb-8"><span class="text-prim">Let's</span> Learn Vocabularies</h2>
             <div id="level-container" class="lessons flex gap-4 justify-center">
-                
-            </div>
-         </section>
 
-         <section id="word-container" class="bg-gray-100 grid grid-cols-3 gap-7 w-11/12 my-10 mx-auto rounded-xl p-7">
-             
+            </div>
+        </section>
+
+        <section id="word-container" class="bg-gray-100 grid grid-cols-3 gap-7 w-11/12 my-10 mx-auto rounded-xl p-7">
+
             <div class="text-center col-span-full my-6">
                 <p class="text-[#79716B] font-bangla text-m">আপনি এখনো কোন Lesson Select করেন নি</p>
                 <h2 class="text-[#292524] font-bangla text-3xl mt-3">একটি Lesson Select করুন।</h2>
             </div>
-            
+
         </section>
+
+        <!-- Open the modal using ID.showModal() method -->
+        <button class="btn" onclick="my_modal_5.showModal()">open modal</button>
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <h3 class="text-lg font-bold">Hello!</h3>
+                <p class="py-4">Press ESC key or click the button below to close</p>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+
     </main>
     <script src="scripts/scripts.js"></script>
 </body>
