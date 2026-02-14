@@ -131,7 +131,7 @@ const displayLessons = (lessons) => {
         // console.log('Hello world')
         // const {level_no} = lesson
         const lessonBtn = document.createElement("div");
-        lessonBtn.innerHTML = `<a id="lesson-btn-${lesson.level_no}" onclick="loadLevelWord(${lesson.level_no})" class="lesson-btn btn bg-transparent border-[#422AD5] text-[#422AD5] hover:bg-[#422AD5] hover:text-white"><i class="fa-solid fa-book-open"></i> Lesson -${lesson.level_no}</a>`;
+        lessonBtn.innerHTML = `<a id="lesson-btn-${lesson.level_no}" onclick="loadLevelWord(${lesson.level_no})" class="lesson-btn text-[11px] md:text-sm btn bg-transparent border-[#422AD5] text-[#422AD5] hover:bg-[#422AD5] hover:text-white "><i class="fa-solid fa-book-open"></i> Lesson -${lesson.level_no}</a>`;
         lessonsContainer.append(lessonBtn)
     }
 
