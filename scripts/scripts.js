@@ -1,5 +1,5 @@
 const createElements = (arr) => {
-    const htmlElements = arr.map((el) => `<span class="btn border-[1px] border-[#D7E4EF] bg-[#EDF7FF] mr-4">${el}</span>`);
+    const htmlElements = arr.map((el) => `<span class="btn border-[1px] border-[#D7E4EF] bg-[#EDF7FF] mt-2 mr-4">${el}</span>`);
     return (htmlElements.join(""))
 }
 
@@ -50,18 +50,18 @@ const displayWordDetails = word => {
     console.log(word)
     const detailsBox = document.getElementById('details-container');
     detailsBox.innerHTML = `<div class="">
-                        <h2 class="text-4xl font-semibold">${word.word} (<i class="fa-solid fa-microphone"></i> : ${word.pronunciation})</h2>
+                        <h2 class="text-2xl md:text-4xl font-semibold">${word.word} (<i class="fa-solid fa-microphone"></i> : ${word.pronunciation})</h2>
                     </div>
                     <div class="">
-                        <h2 class="text-2xl font-semibold mb-2">Meaning</h2>
-                        <p class="font-bangla text-2xl font-medium">${word.meaning}</p>
+                        <h2 class="text-xl md:text-2xl font-semibold mb-2">Meaning</h2>
+                        <p class="font-bangla text-2xl font-medium">${word.meaning ? word.meaning : "No meaning found"}</p>
                     </div>
                     <div class="">
-                        <h2 class="text-2xl font-semibold mb-2">Example</h2>
-                        <p class="text-2xl font-medium">${word.sentence}</p>
+                        <h2 class="text-xl md:text-2xl font-semibold mb-2">Example</h2>
+                        <p class="text-xl md:text-2xl font-medium">${word.sentence}</p>
                     </div>
                     <div class="">
-                        <h2 class="text-2xl font-medium font-bangla mb-2">সমার্থক শব্দ গুলো</h2>
+                        <h2 class="text-xl md:text-2xl font-medium font-bangla mb-2">সমার্থক শব্দ গুলো</h2>
                         <div class="">${createElements(word.synonyms)}</div>
                     </div>`;
     document.getElementById('word_modal').showModal();
@@ -90,9 +90,9 @@ const displayLoadWord = (words) => {
         const cardDiv = document.createElement('div')
         cardDiv.innerHTML = `<div class="shadow-sm bg-white w-auto text-center py-10 px-7 rounded-xl">
                  <h2 class="text-3xl font-bold">${word.word ? word.word : "শব্দ পাওয়া যায়নি "}</h2>
-                 <p class="my-6 font-medium text-[20px]">Meaning/ Pronounciation</p>
+                 <p class="my-2 md:my-6 font-medium text-[20px]">Meaning/ Pronounciation</p>
                  <h2 class="text-[30px] font-medium text-[#18181B]">"${word.meaning ? word.meaning : "অর্থ পাওয়া যায়নি"}/ ${word.pronunciation ? word.pronunciation : "Pronunciation পাওয়া যায়নি "}"</h2>
-                 <div class="flex justify-between mt-12">
+                 <div class="flex justify-between mt-5 md:mt-12">
                     <button class="btn bg-[#1A91FF1A] text-xl" onclick="loadWordDetail(${word.id})"><i class="fa-solid fa-circle-info"></i></button>
                     <button class="btn bg-[#1A91FF1A] text-xl"><i class="fa-solid fa-volume-high"></i></button>
                  </div>
