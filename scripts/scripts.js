@@ -4,9 +4,9 @@ const createElements = (arr) => {
 }
 
 function pronounceWord(word) {
-  const utterance = new SpeechSynthesisUtterance(word);
-  utterance.lang = "en-EN"; // English
-  window.speechSynthesis.speak(utterance);
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = "en-EN"; // English
+    window.speechSynthesis.speak(utterance);
 }
 
 const manageSpinner = status => {
@@ -23,14 +23,11 @@ const loadLessons = () => {
     fetch('https://openapi.programming-hero.com/api/levels/all')
         .then((res) => res.json())
         .then(data => displayLessons(data.data))
-
-
 }
 
 const removeActive = () => {
     const lessonButtons = document.querySelectorAll('.lesson-btn')
     lessonButtons.forEach(btn => btn.classList.remove('active'))
-
 }
 
 const loadWordDetail = async (id) => {
@@ -47,7 +44,6 @@ const loadWordDetail = async (id) => {
 const loadLevelWord = (id) => {
     manageSpinner(true)
     const url = `https://openapi.programming-hero.com/api/level/${id}`;
-    // console.log(url);
     fetch(url)
         .then(res => res.json())
         .then(data => {
@@ -56,13 +52,9 @@ const loadLevelWord = (id) => {
             clickBtn.classList.add('active');
             displayLoadWord(data.data)
         });
-
-
-    // return url;
 }
 
 const displayWordDetails = word => {
-    // console.log(word)
     const detailsBox = document.getElementById('details-container');
     detailsBox.innerHTML = `<div class="">
                         <h2 class="text-2xl md:text-4xl font-semibold">${word.word} (<i class="fa-solid fa-microphone"></i> : ${word.pronunciation})</h2>
@@ -84,8 +76,6 @@ const displayWordDetails = word => {
 
 const displayLoadWord = (words) => {
     const cardContainer = document.getElementById('word-container')
-    // console.log(cardContainer)
-    // cardContainer.innerHTML = '<h1>hello world</a>';    
     cardContainer.innerHTML = '';
 
     if (words.length == 0) {
@@ -99,9 +89,7 @@ const displayLoadWord = (words) => {
         `
     }
 
-    // console.log(words);
     for (let word of words) {
-        // console.log(word)
         const cardDiv = document.createElement('div')
         cardDiv.innerHTML = `<div class="shadow-sm bg-white w-auto text-center py-10 px-7 rounded-xl">
                  <h2 class="text-3xl font-bold">${word.word ? word.word : "শব্দ পাওয়া যায়নি "}</h2>
@@ -118,20 +106,13 @@ const displayLoadWord = (words) => {
 }
 
 const displayLessons = (lessons) => {
-    // console.log(lesson)
-    // 1. get the container @ empty
     const lessonsContainer = document.getElementById('level-container')
-
-    // 2. get into every lessons
-    //     3. create Element
-    //     4. append into container
-
     lessonsContainer.innerHTML = '';
     for (let lesson of lessons) {
         // console.log('Hello world')
         // const {level_no} = lesson
         const lessonBtn = document.createElement("div");
-        lessonBtn.innerHTML = `<a id="lesson-btn-${lesson.level_no}" onclick="loadLevelWord(${lesson.level_no})" class="lesson-btn text-[11px] md:text-sm btn bg-transparent border-[#422AD5] text-[#422AD5] hover:bg-[#422AD5] hover:text-white "><i class="fa-solid fa-book-open"></i> Lesson -${lesson.level_no}</a>`;
+        lessonBtn.innerHTML = `<a id="lesson-btn-${lesson.level_no}" onclick="loadLevelWord(${lesson.level_no})" class="lesson-btn text-[10px] md:text-sm btn bg-transparent border-[#422AD5] text-[#422AD5] hover:bg-[#422AD5] hover:text-white "><i class="fa-solid fa-book-open"></i> Lesson -${lesson.level_no}</a>`;
         lessonsContainer.append(lessonBtn)
     }
 
@@ -143,13 +124,11 @@ document.getElementById('btn-search').addEventListener("click", () => {
     removeActive()
     const input = document.getElementById('input-search');
     const searchValue = input.value.trim().toLowerCase();
-    console.log(searchValue)
     fetch('https://openapi.programming-hero.com/api/words/all')
         .then(res => res.json())
         .then((data) => {
             const allWords = data.data;
-            console.log(allWords);
-            const filterWords = allWords.filter((word) => 
+            const filterWords = allWords.filter((word) =>
                 word.word.toLowerCase().includes(searchValue)
             );
             displayLoadWord(filterWords)
